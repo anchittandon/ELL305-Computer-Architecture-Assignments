@@ -1,6 +1,32 @@
 .bubblesort:
 		@ ADD YOUR CODE HERE
-
+	sub r3,r3,1
+	mul r8,r3,4
+	.loop1:
+		cmp r2,r8 @ r2 is i, r3 is n-1
+		beq .break1
+		mov r4,0  @ r4 is j
+		sub r5,r8,r2 @ r5 is n-i-1
+		sub r5,r5,4
+		.loop2:
+			cmp r4,r5
+			beq .break2
+			ld r6,[r4]
+			ld r7,4[r4]
+			cmp r6,r7
+			bgt .if
+			b .afterif
+			.if:
+				st r6,4[r4]
+				st r7,[r4]	
+			.afterif:
+				add r4,r4,4
+				b .loop2
+		.break2:
+			add r2,r2,4
+			b .loop1	
+	.break1:
+		ret
 
 .main:
 
