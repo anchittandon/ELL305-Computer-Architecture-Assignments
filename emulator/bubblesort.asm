@@ -7,7 +7,6 @@
 		beq .break1
 		mov r4,0  @ r4 is j
 		sub r5,r8,r2 @ r5 is n-i-1
-		sub r5,r5,4
 		.loop2:
 			cmp r4,r5
 			beq .break2
