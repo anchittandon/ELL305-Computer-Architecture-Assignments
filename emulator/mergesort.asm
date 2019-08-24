@@ -99,6 +99,7 @@
 	.breakwhile1:
 		cmp r9,r4
 		bgt .afterbreak
+		ld r12,2000[r9]
 		st r12,[r10]
 		add r9,r9,4
 		add r10,r10,4
@@ -106,6 +107,7 @@
 	.breakwhile2:
 		cmp r8,r5
 		bgt .afterbreak
+		ld r11,1000[r8]
 		st r11,[r10]
 		add r8,r8,4
 		add r10,r10,4
