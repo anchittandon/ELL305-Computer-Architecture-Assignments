@@ -1,28 +1,27 @@
 .bubblesort:
-		@ ADD YOUR CODE HERE
-	sub r3,r3,1
-	mul r8,r3,4
-	.loop1:
-		cmp r2,r8 @ r2 is i, r3 is n-1
-		beq .break1
-		mov r4,0  @ r4 is j
-		sub r5,r8,r2 @ r5 is n-i-1
-		.loop2:
-			cmp r4,r5
-			beq .break2
-			ld r6,[r4]
-			ld r7,4[r4]
+	sub r3,r3,1 			@ Make r3 equal to N-1
+	mul r8,r3,4 			@ Convert to multiple of 4 
+	.loop1:					@ outer loop 
+		cmp r2,r8 			@ r2 is i*4, r8 is (N-1)*4
+		beq .break1 		@ End outer loop
+		mov r4,0  			@ r4 is j*4
+		sub r5,r8,r2 		@ r5 is (N-i-1)*4
+		.loop2:				@ inner loop
+			cmp r4,r5 
+			beq .break2 	@ End inner loop
+			ld r6,[r4] 		@ Retrieve element at index j
+			ld r7,4[r4] 	@ Retrieve element at index j+1
 			cmp r6,r7
-			bgt .if
-			b .afterif
-			.if:
-				st r6,4[r4]
+			bgt .if   		@ If element at j is greater than at j+1
+			b .afterif 		@ Necessary update
+			.if:      		@ Swap elements at j and j+1
+				st r6,4[r4] 
 				st r7,[r4]	
-			.afterif:
-				add r4,r4,4
+			.afterif:  
+				add r4,r4,4 @ Update j
 				b .loop2
 		.break2:
-			add r2,r2,4
+			add r2,r2,4 	@ Update i
 			b .loop1	
 	.break1:
 		ret
