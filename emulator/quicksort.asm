@@ -1,70 +1,84 @@
 .quicksort:
-		@ ADD YOUR CODE HERE
-	cmp r4,r2
-	bgt .if
+
+	cmp r4,r2				@ right should be greater than left to proceed
+	bgt .if 				
 	b .break
+
 	.if:
-		sub sp,sp,4
-		st ra,[sp]
-		call .partition
-		ld ra,[sp]
-		add sp,sp,4
 
+		sub sp,sp,4			@ Create space in stack for 1 element
+		st ra,[sp]			@ push return address to stack
+
+		call .partition		@ partition(left,right)
+
+		ld ra,[sp]			@ pop return address from stack
+		add sp,sp,4			@ Remove space in stack for 1 element
+
+		sub sp,sp,16		@ Create space in stack for 4 elements
+
+		st r2,[sp]			@ push left to stack
+		st r5, 4[sp]		@ push mid to stack
+		st r4, 8[sp]		@ push right to stack
+		st ra, 12[sp]		@ push return address to stack
+
+		sub r4,r5,4			@ right = pivot - 1
+
+		call .quicksort		@ quicksort(left, pivot-1)
+
+		ld r2,[sp]			@ pop left from stack
+		ld r5,4[sp]			@ pop pivot from stack
+		ld r4,8[sp]			@ pop right from stack
+		ld ra,12[sp]		@ pop return address from stack
 		
-		sub sp,sp,16
+		add r2,r5,4 		@ left = pivot + 1
 
-		st r2,[sp]
-		st r5, 4[sp]
-		st r4, 8[sp]
-		st ra, 12[sp]
-
-		sub r4,r5,4
-
-		call .quicksort
-
-		ld r2,[sp]
-		ld r5,4[sp]
-		ld r4,8[sp]
-		ld ra,12[sp]
+		call .quicksort		@ quicksort(pivot+1, right)
 		
-		add r2,r5,4 
+		ld r2,[sp]			@ pop left from stack
+		ld r5,4[sp]			@ pop pivot from stack
+		ld r4,8[sp]			@ pop right from stack
+		ld ra,12[sp]		@ pop return address from stack
+		
+		add sp,sp,16		@ Remove space in stack for 4 elements 
 
-		call .quicksort
-		
-		ld r2,[sp]
-		ld r5,4[sp]
-		ld r4,8[sp]
-		ld ra,12[sp]
-		
-		add sp,sp,16
 	.break:
+
 		ret
 
 .partition:
-	ld r5, [r4]
-	sub r6,r2,4
-	mov r7,r2
+
+	ld r5, [r4]				@ Take array[right] as pivot
+	sub r6,r2,4				@ i = left - 1
+	mov r7,r2				@ j = left
+
 	.loop:
-		cmp r7,r4
-		bgt .breakloop
-		ld r9,[r7]
-		cmp r5,r9
-		bgt .if1	
+
+		cmp r7,r4			
+		bgt .breakloop		@ j > right then break
+		ld r9,[r7]			@ Take array[j]
+		cmp r5,r9			
+		bgt .if1			@ array[j] < pivot then ...
 		b .afterif
+
 		.if1:
-			add r6,r6,4
-			ld r8,[r6]
-			st r8,[r7]
+
+			add r6,r6,4		@ ... i++
+			ld r8,[r6]		@ Take array[i]
+			st r8,[r7]		@ swap array[i] and array[j]
 			st r9,[r6]
+
 		.afterif:
-			add r7,r7,4
+
+			add r7,r7,4		@ j++
 			b .loop
+
 	.breakloop:
-		ld r8,[r4]
-		ld r9,4[r6]
-		st r8,4[r6]
-		st r9,[r4]
-		add r5,r6,4
+
+		ld r8,[r4]			@ Take array[right]
+		ld r9,4[r6]			@ Take array[i+1]
+		st r8,4[r6]			@ Swap array[i+1] and array[right]
+		st r9,[r4]				
+		add r5,r6,4			@ pivot = i+1
 		ret
 		
  .main:
