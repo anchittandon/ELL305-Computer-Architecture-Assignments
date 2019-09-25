@@ -46,6 +46,7 @@
     </tool>
     <sep/>
     <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
       <a name="tristate" val="false"/>
     </tool>
     <tool lib="0" name="Pin">
@@ -1046,20 +1047,64 @@
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(340,170)" to="(430,170)"/>
+    <wire from="(340,330)" to="(430,330)"/>
+    <wire from="(230,170)" to="(320,170)"/>
+    <wire from="(230,330)" to="(320,330)"/>
+    <wire from="(230,130)" to="(230,170)"/>
+    <wire from="(320,290)" to="(320,330)"/>
+    <wire from="(340,290)" to="(340,330)"/>
+    <wire from="(320,170)" to="(320,180)"/>
+    <wire from="(430,130)" to="(430,170)"/>
+    <wire from="(340,170)" to="(340,180)"/>
+    <wire from="(430,330)" to="(430,350)"/>
+    <wire from="(320,210)" to="(320,260)"/>
+    <wire from="(330,130)" to="(330,180)"/>
+    <wire from="(330,210)" to="(330,260)"/>
+    <wire from="(340,210)" to="(340,260)"/>
+    <wire from="(230,330)" to="(230,350)"/>
+    <wire from="(350,270)" to="(450,270)"/>
+    <wire from="(330,290)" to="(330,350)"/>
+    <comp lib="0" loc="(230,350)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="labelloc" val="east"/>
+    </comp>
     <comp lib="0" loc="(430,130)" name="Pin">
       <a name="facing" val="south"/>
       <a name="width" val="32"/>
       <a name="tristate" val="false"/>
     </comp>
+    <comp loc="(320,180)" name="Left shift by 61 bits (80 bit)"/>
     <comp lib="0" loc="(330,130)" name="Pin">
       <a name="facing" val="south"/>
       <a name="width" val="32"/>
       <a name="tristate" val="false"/>
     </comp>
+    <comp loc="(350,270)" name="Pass via S-box and XOR with Round Counter"/>
+    <comp lib="0" loc="(330,350)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="labelloc" val="east"/>
+    </comp>
     <comp lib="0" loc="(230,130)" name="Pin">
       <a name="facing" val="south"/>
       <a name="width" val="16"/>
       <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(450,270)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Round Clock"/>
+    </comp>
+    <comp lib="0" loc="(430,350)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
   <circuit name="Left shift by 61 bits (80 bit)">
