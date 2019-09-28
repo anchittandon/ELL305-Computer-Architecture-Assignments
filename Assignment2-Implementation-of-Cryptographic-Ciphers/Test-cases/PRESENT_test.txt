@@ -1,0 +1,28 @@
+Test vectors for PRESENT with an 80-bit key in hexadecimal notation-
+
+plaintext: 00000000 00000000
+key: 00000000 00000000 0000
+ciphertext: 5579C138 7B228445
+
+plaintext: 00000000 00000000
+key: FFFFFFFF FFFFFFFF FFFF
+Ciphertext: E72C46C0 F5945049
+
+plaintext: FFFFFFFF FFFFFFFF
+key: 00000000 00000000 0000
+Ciphertext: A112FFC7 2F68417B
+
+plaintext: FFFFFFFF FFFFFFFF
+key: FFFFFFFF FFFFFFFF FFFF
+Ciphertext: 3333DCD3 213210D2
+
+
+
+
+
+
+
+
+
+
+
