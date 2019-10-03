@@ -1161,4 +1161,146 @@
       <a name="value" val="0x6"/>
     </comp>
   </circuit>
+  <circuit name="S-box layer">
+    <a name="circuit" val="S-box layer"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(310,240)" to="(370,240)"/>
+    <wire from="(290,220)" to="(290,290)"/>
+    <wire from="(90,360)" to="(150,360)"/>
+    <wire from="(210,260)" to="(270,260)"/>
+    <wire from="(190,340)" to="(250,340)"/>
+    <wire from="(240,220)" to="(240,230)"/>
+    <wire from="(220,370)" to="(220,380)"/>
+    <wire from="(210,320)" to="(210,330)"/>
+    <wire from="(130,240)" to="(250,240)"/>
+    <wire from="(210,360)" to="(330,360)"/>
+    <wire from="(310,220)" to="(310,240)"/>
+    <wire from="(150,360)" to="(150,380)"/>
+    <wire from="(250,270)" to="(250,290)"/>
+    <wire from="(250,220)" to="(250,240)"/>
+    <wire from="(210,360)" to="(210,380)"/>
+    <wire from="(250,320)" to="(250,340)"/>
+    <wire from="(260,220)" to="(260,250)"/>
+    <wire from="(300,220)" to="(300,250)"/>
+    <wire from="(290,320)" to="(290,350)"/>
+    <wire from="(130,320)" to="(130,350)"/>
+    <wire from="(160,350)" to="(160,380)"/>
+    <wire from="(210,260)" to="(210,290)"/>
+    <wire from="(200,350)" to="(200,380)"/>
+    <wire from="(180,330)" to="(210,330)"/>
+    <wire from="(130,350)" to="(160,350)"/>
+    <wire from="(250,270)" to="(280,270)"/>
+    <wire from="(170,250)" to="(260,250)"/>
+    <wire from="(200,350)" to="(290,350)"/>
+    <wire from="(300,250)" to="(330,250)"/>
+    <wire from="(90,320)" to="(90,360)"/>
+    <wire from="(220,370)" to="(370,370)"/>
+    <wire from="(170,250)" to="(170,290)"/>
+    <wire from="(230,160)" to="(230,200)"/>
+    <wire from="(90,230)" to="(240,230)"/>
+    <wire from="(190,340)" to="(190,380)"/>
+    <wire from="(270,220)" to="(270,260)"/>
+    <wire from="(330,250)" to="(330,290)"/>
+    <wire from="(330,320)" to="(330,360)"/>
+    <wire from="(130,240)" to="(130,290)"/>
+    <wire from="(180,330)" to="(180,380)"/>
+    <wire from="(280,220)" to="(280,270)"/>
+    <wire from="(370,240)" to="(370,290)"/>
+    <wire from="(370,320)" to="(370,370)"/>
+    <wire from="(90,230)" to="(90,290)"/>
+    <wire from="(170,320)" to="(170,380)"/>
+    <comp loc="(130,290)" name="S-box 6"/>
+    <comp lib="0" loc="(230,400)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="32"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="1"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="2"/>
+      <a name="bit9" val="2"/>
+      <a name="bit10" val="2"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="3"/>
+      <a name="bit13" val="3"/>
+      <a name="bit14" val="3"/>
+      <a name="bit15" val="3"/>
+      <a name="bit16" val="4"/>
+      <a name="bit17" val="4"/>
+      <a name="bit18" val="4"/>
+      <a name="bit19" val="4"/>
+      <a name="bit20" val="5"/>
+      <a name="bit21" val="5"/>
+      <a name="bit22" val="5"/>
+      <a name="bit23" val="5"/>
+      <a name="bit24" val="6"/>
+      <a name="bit25" val="6"/>
+      <a name="bit26" val="6"/>
+      <a name="bit27" val="6"/>
+      <a name="bit28" val="7"/>
+      <a name="bit29" val="7"/>
+      <a name="bit30" val="7"/>
+      <a name="bit31" val="7"/>
+    </comp>
+    <comp loc="(210,290)" name="S-box 4"/>
+    <comp loc="(250,290)" name="S-box 3"/>
+    <comp loc="(330,290)" name="S-box 1"/>
+    <comp lib="0" loc="(230,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp loc="(170,290)" name="S-box 5"/>
+    <comp loc="(370,290)" name="S-box 0"/>
+    <comp loc="(290,290)" name="S-box 2"/>
+    <comp lib="0" loc="(230,400)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp loc="(90,290)" name="S-box 7"/>
+    <comp lib="0" loc="(230,200)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="32"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="1"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="2"/>
+      <a name="bit9" val="2"/>
+      <a name="bit10" val="2"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="3"/>
+      <a name="bit13" val="3"/>
+      <a name="bit14" val="3"/>
+      <a name="bit15" val="3"/>
+      <a name="bit16" val="4"/>
+      <a name="bit17" val="4"/>
+      <a name="bit18" val="4"/>
+      <a name="bit19" val="4"/>
+      <a name="bit20" val="5"/>
+      <a name="bit21" val="5"/>
+      <a name="bit22" val="5"/>
+      <a name="bit23" val="5"/>
+      <a name="bit24" val="6"/>
+      <a name="bit25" val="6"/>
+      <a name="bit26" val="6"/>
+      <a name="bit27" val="6"/>
+      <a name="bit28" val="7"/>
+      <a name="bit29" val="7"/>
+      <a name="bit30" val="7"/>
+      <a name="bit31" val="7"/>
+    </comp>
+  </circuit>
 </project>
