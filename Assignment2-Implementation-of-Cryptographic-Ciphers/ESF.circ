@@ -1774,6 +1774,7 @@
       <a name="width" val="32"/>
       <a name="tristate" val="false"/>
     </comp>
+    <comp loc="(350,270)" name="Pass via S box and XOR with Round Clock"/>
     <comp lib="0" loc="(430,130)" name="Pin">
       <a name="facing" val="south"/>
       <a name="width" val="32"/>
